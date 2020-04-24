@@ -1,5 +1,5 @@
 TARGET = shiftgear
-OBJS = main.o game.o
+OBJS = main.o game.o level.o player.o car.o sprite.o constants.o
 
 CFLAGS = -Wall -Wextra -g
 CC = gcc
