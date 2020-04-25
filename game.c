@@ -10,26 +10,24 @@ Game CreateGame() {
         SDL_WINDOWPOS_UNDEFINED,
         WINDOW_WIDTH,
         WINDOW_HEIGHT,
-        SDL_WINDOW_OPENGL
+        0
     );
     if (window == NULL) {
         SDL_Log("Could not initialize window: %s\n", SDL_GetError());
         exit(1);
     }
 
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (renderer == NULL){
         SDL_Log("Could not initialize renderer: %s\n", SDL_GetError());
         exit(1);
     }
 
-    Game game = {
-        1,          // running
-        window,     // *window
-        renderer,   // *renderer
-        NULL,       // *event
-        CreateLevel(game.renderer)
-    };
+    Game game;
+    game.running = 1;
+    game.window = window;
+    game.renderer = renderer;
+    game.level = CreateLevel(game.renderer);
 
     return game;
 }
