@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include <SDL2/SDL.h>
+#include <stdlib.h>
 #include "level.h"
 
 typedef struct Game

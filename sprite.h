@@ -2,6 +2,7 @@
 #define SPRITE_H
 
 #include <SDL2/SDL.h>
+#include <stdlib.h>
 
 typedef struct Sprite {
     SDL_Rect rect;

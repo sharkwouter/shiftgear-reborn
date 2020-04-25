@@ -1,2 +1,7 @@
 *.o
 shiftgear
+*.elf
+PARAM.SFO
+EBOOT.PBP
+*.prx
+SDL_Log.txt
